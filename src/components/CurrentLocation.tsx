@@ -12,18 +12,18 @@ const CurrentLocation = ({ setCity }: any) => {
       setIp(data);
       fetchIPInfo();
     } catch (err) {
-      console.log(err);
+      //   console.log(err);
     }
   };
 
   const fetchIPInfo = async () => {
     try {
-      const res = await fetch(`http://ip-api.com/json/${ip}`);
+      const res = await fetch(`https://ipinfo.io/${ip}/json`);
       const data = await res.json();
-      console.log(data);
+      //   console.log(data);
       setCity(data?.city);
     } catch (er) {
-      console.log(er);
+      //   console.log(er);
     }
   };
 

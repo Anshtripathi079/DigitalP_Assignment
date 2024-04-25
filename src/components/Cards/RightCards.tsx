@@ -23,7 +23,7 @@ const RightCards: React.FC<RightCardsProps> = ({ data, forecastData }) => {
       const jsonData = await res.json();
 
       setAqiData(jsonData);
-      console.log(jsonData);
+      // console.log(jsonData);
     } catch (error) {
       // console.error("Error fetching data:", error);
     }
