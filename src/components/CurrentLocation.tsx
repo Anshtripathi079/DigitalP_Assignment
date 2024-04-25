@@ -1,0 +1,46 @@
+import { FaLocationCrosshairs } from "react-icons/fa6";
+import { Toaster } from "react-hot-toast";
+import { useState } from "react";
+
+const CurrentLocation = ({ setCity }: any) => {
+  const [ip, setIp] = useState("");
+
+  const getIP = async () => {
+    try {
+      const res = await fetch("https://api.ipify.org");
+      const data = await res.text();
+      setIp(data);
+      fetchIPInfo();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchIPInfo = async () => {
+    try {
+      const res = await fetch(`http://ip-api.com/json/${ip}`);
+      const data = await res.json();
+      console.log(data);
+      setCity(data?.city);
+    } catch (er) {
+      console.log(er);
+    }
+  };
+
+  return (
+    <>
+      <div>
+        <button
+          className="bg-[#2b282e] p-2 lg:p-3 flex gap-3 items-center text-white rounded-md"
+          onClick={getIP}
+        >
+          <FaLocationCrosshairs />
+          <span>Weather at my location</span>
+        </button>
+      </div>
+      <Toaster />
+    </>
+  );
+};
+
+export default CurrentLocation;

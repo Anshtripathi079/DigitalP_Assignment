@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background: #1d1b1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #242e39;
+}
+body {
+  background-color: #131216;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: "Baloo 2", sans-serif;
+  color: #fff;
+}
+
+tr {
+  background-color: #1d1b1f;
+}
+tr:nth-child(even) {
+  background-color: #242e39;
+  color: #fff;
+}
+
+td,
+th,
+tr {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/* 1D1B1F */
+.margin-m {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 400px) {
+  .margin-m {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .margin-m {
+    margin-right: 45px;
+  }
+}
